@@ -1,0 +1,25 @@
+<div class="dashboard-card-container" fxLayout="column" fxLayoutAlign="center">
+    <mat-card class="dashboard-card">
+        <mat-card-header>
+            <mat-card-title>Dashboard</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field class="dashboard-select" appearance="fill">
+                <mat-label>Select an asset</mat-label>
+                <mat-select (selectionChange)="setChartData($event.value)">
+                    <mat-option *ngFor="let asset of uniqueAssets" [value]="asset.assetId">
+                        Asset: {{asset.assetId}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div echarts [options]="chartOption" [merge]="chartOption" (chartInit)="onChartInit($event)"
+                class="demo-chart"></div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="logout()">
+                <mat-icon fontIcon="logout"></mat-icon> Logout
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
