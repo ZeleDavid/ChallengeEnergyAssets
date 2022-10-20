@@ -21,10 +21,6 @@ export class DashboardComponent implements OnInit {
     tooltip: {
       trigger: 'axis',
     },
-    dataset: {
-      source: this.chosenAssets,
-      dimensions: ['assetId', 'timestamp', 'activePower', 'voltage'],
-    },
     xAxis: {
       type: 'time',
     },
@@ -68,7 +64,6 @@ export class DashboardComponent implements OnInit {
       source: this.chosenAssets,
       dimensions: ['assetId', 'timestamp', 'activePower', 'voltage'],
     };
-    console.log(this.chosenAssets)
     this.chartOption.dataset = [];
     this.chartOption.dataset.push(dataset);
     this.echartsInstance.setOption(this.chartOption);
