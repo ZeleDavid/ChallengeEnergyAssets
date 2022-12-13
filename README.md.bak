@@ -59,4 +59,4 @@ The application is result of a frontend challenge. Entire backend is mocked.
 
 **Client:**
 
-- Authentication client with login method - mocks checking username and password to API
+- Authentication client with login method - mocks checking username and password to api
